@@ -40,7 +40,11 @@ const common = {
 				query: {
 					presets: ['es2015', 'react']
 				}
-			}
+			},
+            {
+                test: /\.scss$/,
+                loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!autoprefixer-loader?browsers=last 15 versions!sass'
+            }
 		]
 	},
 	plugins: [

@@ -12,23 +12,18 @@ module.exports = {
 				loader: 'babel',
 				exclude: /node_modules/,
 				query: {
-					presets: ['es2015']
-				},
-				plugins: ['transform-runtime']
+					presets: ['es2015'],
+					plugins: ['transform-runtime']
+				}
 			},
 			{
 				test: /\.jsx$/,
-				loader: 'babel',
-				exclude: /node_modules/,
-				query: {
-					presets: ['es2015', 'react']
-				},
-				plugins: ['transform-runtime']
+				loaders: ['babel-loader'],
+				exclude: /node_modules/
 			}
 		]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.HotModuleReplacementPlugin()
 	]
 }
